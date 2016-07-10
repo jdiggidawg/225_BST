@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		50E2FD0C1D32EB5B0008304D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50E2FD0B1D32EB5B0008304D /* main.cpp */; };
+		50E2FD1A1D32FC5D0008304D /* BST_driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50E2FD181D32FC5D0008304D /* BST_driver.cpp */; };
 		A7C6043E1D32EEE7001B5C31 /* Word.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7C6043C1D32EEE7001B5C31 /* Word.cpp */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,9 @@
 /* Begin PBXFileReference section */
 		50E2FD081D32EB5B0008304D /* EKTApp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EKTApp; sourceTree = BUILT_PRODUCTS_DIR; };
 		50E2FD0B1D32EB5B0008304D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		50E2FD161D32F8F30008304D /* BST.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BST.hpp; sourceTree = "<group>"; };
+		50E2FD181D32FC5D0008304D /* BST_driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BST_driver.cpp; sourceTree = "<group>"; };
+		50E2FD191D32FC5D0008304D /* BST_driver.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BST_driver.hpp; sourceTree = "<group>"; };
 		A7C6043C1D32EEE7001B5C31 /* Word.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Word.cpp; sourceTree = "<group>"; };
 		A7C6043D1D32EEE7001B5C31 /* Word.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Word.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,8 +65,11 @@
 			isa = PBXGroup;
 			children = (
 				50E2FD0B1D32EB5B0008304D /* main.cpp */,
+				50E2FD161D32F8F30008304D /* BST.hpp */,
 				A7C6043C1D32EEE7001B5C31 /* Word.cpp */,
 				A7C6043D1D32EEE7001B5C31 /* Word.hpp */,
+				50E2FD181D32FC5D0008304D /* BST_driver.cpp */,
+				50E2FD191D32FC5D0008304D /* BST_driver.hpp */,
 			);
 			path = EKTApp;
 			sourceTree = "<group>";
@@ -125,6 +132,7 @@
 			files = (
 				50E2FD0C1D32EB5B0008304D /* main.cpp in Sources */,
 				A7C6043E1D32EEE7001B5C31 /* Word.cpp in Sources */,
+				50E2FD1A1D32FC5D0008304D /* BST_driver.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
