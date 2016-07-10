@@ -10,5 +10,20 @@
 #define Word_hpp
 
 #include <stdio.h>
+#include <iostream>
+
+using namespace std;
+
+class Word {
+    
+    
+public:
+    string english;
+    string klingon;
+    
+    Word(const string newEng, const string newKling) : english(newEng), klingon(newKling) {}
+    
+    
+};
 
 #endif /* Word_hpp */
