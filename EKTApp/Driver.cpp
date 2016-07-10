@@ -33,8 +33,9 @@ void Driver::testSearchWords() {
     
 }
 
+
 void Driver::populateDictionary(){
-    dictionary = *new KlingonDictionary;
+    dictionary = *new KlingonDictionary();
     dictionary.populate(wordList);
 }
 

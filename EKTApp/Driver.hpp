@@ -20,6 +20,7 @@ class Driver {
     vector<Word> wordList;
     KlingonDictionary dictionary;
 public:
+    Driver(){};
     void test();
     void populateWordList();
     void populateDictionary();

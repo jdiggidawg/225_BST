@@ -16,7 +16,7 @@ void testWord();
 
 int main(int argc, const char * argv[]) {
     
-    Driver *driver = new Driver;
+    Driver *driver = new Driver();
     driver->test();
     
     

@@ -9,33 +9,77 @@
 #ifndef BST_hpp
 #define BST_hpp
 
-#include "Word.hpp"
+
 #include <stdio.h>
 #include <iostream>
+#include <vector>
+
 using namespace std;
 
-
 template <class Type>
-class BST
-{
+class BST{
 
 private:
     
+    struct node {
+        Type data;
+        node *left;
+        node *right;
+        node(){};
+        node (Type value): data(value), left(NULL), right(NULL) {};
+    };
+    
+    node root;
+    void traverse(node* root);
     
 public:
+    
     BST();
+    BST(vector<Type> list);
     
-    bool insert (const Word&);
-    
-    Word* search (const Word& target);
-    
-    
+    bool insert (Type);
+    Type* search (Type *target);
+    vector<Type> flattenedTree();
 };
 
-bool BST::BST() {
-    
+template <class Type>
+BST<Type>:: BST(){
+    root = node(Type());
 }
 
+template <class Type>
+BST<Type>:: BST(vector<Type>) {
+    root = NULL;
+}
 
+template <class Type>
+bool BST<Type>::insert (Type newThing) {
+    node newNode = node(newThing);
+    //TODO:
+    return true;
+}
+
+template <class Type>
+Type* BST<Type>::search (Type *target) {
+    //TODO:
+    return NULL;
+}
+
+template <class Type>
+vector<Type> flattenedTree(){
+    vector<Type> flatTree;
+    //TODO: traverse...
+    return flatTree;
+}
+                  
+template <class Type>
+void BST<Type>:: traverse(node* root){
+    if(root != NULL) {
+        Inorder(root->Left());
+        cout << root->Key() << endl;
+        Inorder(root->Right());
+        
+    }
+}
 
 #endif /* BST_hpp */

@@ -21,6 +21,7 @@ public:
     string english;
     string klingon;
     
+    Word(){};
     Word(const string newEng, const string newKling) : english(newEng), klingon(newKling) {}
     
     

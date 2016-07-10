@@ -10,7 +10,9 @@
 
 
 void KlingonDictionary::populate(vector<Word> wordList) {
-    //TODO:
+    for (int i = 0; i < wordList.size(); i++) {
+        tree.insert(wordList[i]);
+    }
 }
 
 string KlingonDictionary::klingonFor(string englishWord) {

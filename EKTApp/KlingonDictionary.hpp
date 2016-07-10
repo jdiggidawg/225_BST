@@ -12,13 +12,17 @@
 #include <stdio.h>
 #include "Word.hpp"
 #include <vector>
+#include "BST.hpp"
 
 using namespace std;
 
 class KlingonDictionary {
-    
+
+private:
+    BST<Word> tree;
     
 public:
+    
     void populate(vector<Word>);
     string klingonFor(string englishWord);
 };

@@ -28,6 +28,7 @@
 /* Begin PBXFileReference section */
 		50E2FD081D32EB5B0008304D /* EKTApp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EKTApp; sourceTree = BUILT_PRODUCTS_DIR; };
 		50E2FD0B1D32EB5B0008304D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		50E2FD1F1D330AE40008304D /* BST.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BST.hpp; sourceTree = "<group>"; };
 		A7C6043C1D32EEE7001B5C31 /* Word.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Word.cpp; sourceTree = "<group>"; };
 		A7C6043D1D32EEE7001B5C31 /* Word.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Word.hpp; sourceTree = "<group>"; };
 		A7C604451D32F8CF001B5C31 /* Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Driver.cpp; sourceTree = "<group>"; };
@@ -69,6 +70,7 @@
 				50E2FD0B1D32EB5B0008304D /* main.cpp */,
 				A7C604481D330137001B5C31 /* KlingonDictionary.cpp */,
 				A7C604491D330137001B5C31 /* KlingonDictionary.hpp */,
+				50E2FD1F1D330AE40008304D /* BST.hpp */,
 				A7C6043C1D32EEE7001B5C31 /* Word.cpp */,
 				A7C6043D1D32EEE7001B5C31 /* Word.hpp */,
 				A7C604451D32F8CF001B5C31 /* Driver.cpp */,
