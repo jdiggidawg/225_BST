@@ -6,10 +6,19 @@
 //  Copyright © 2016 jdiggidawg. All rights reserved.
 //
 
+#include <assert.h>
 #include <iostream>
+#include "Driver.hpp"
+
+using namespace std;
+
+void testWord();
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    
+    Driver *driver = new Driver;
+    driver->test();
+    
+    
     return 0;
 }

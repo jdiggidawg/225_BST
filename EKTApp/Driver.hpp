@@ -10,12 +10,22 @@
 #define Driver_hpp
 
 #include <stdio.h>
+#include "Word.hpp"
+#include <iostream>
+#include <assert.h>
+#include <vector>
+#include "KlingonDictionary.hpp"
 
 class Driver {
-    
-    
+    vector<Word> wordList;
+    KlingonDictionary dictionary;
 public:
-    void testWord();
+    void test();
+    void populateWordList();
+    void populateDictionary();
+    void testSearchWords();
 };
+
+
 
 #endif /* Driver_hpp */
