@@ -30,6 +30,8 @@ void Driver::testSearchWords() {
     string klingC = dictionary.klingonFor(c);
     
     assert(klingA == "AAA");
+    assert(klingB == "BBB");
+    assert(klingC == "CCC");
     
 }
 

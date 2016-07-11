@@ -31,6 +31,7 @@ private:
     
     node root;
     void traverse(node* root);
+    void balance();
     
 public:
     
@@ -48,6 +49,11 @@ BST<Type>:: BST(){
 }
 
 template <class Type>
+void BST<Type>:: balance(){
+    //TODO:
+}
+
+template <class Type>
 BST<Type>:: BST(vector<Type>) {
     root = NULL;
 }
@@ -56,6 +62,12 @@ template <class Type>
 bool BST<Type>::insert (Type newThing) {
     node newNode = node(newThing);
     //TODO:
+    newNode->left = NULL;
+    newNode->right = NULL;
+    if(root == NULL) {
+        root = newNode;
+    }
+    balance();
     return true;
 }
 

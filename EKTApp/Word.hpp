@@ -24,6 +24,13 @@ public:
     Word(){};
     Word(const string newEng, const string newKling) : english(newEng), klingon(newKling) {}
     
+    bool operator ==(const Word &w) const;
+    bool operator <(const Word &w) const;
+    bool operator >(const Word &w) const;
+    bool operator !=(const Word &w) const;
+    bool operator <=(const Word &w) const;
+    bool operator >=(const Word &w) const;
+    
     
 };
 

@@ -7,3 +7,27 @@
 //
 
 #include "Word.hpp"
+
+bool compareEnglishString(string lhs, string rhs){
+    //TODO:
+    return true;
+}
+
+bool Word::operator <(const Word &w) const{
+    return compareEnglishString(this->english, w.english);
+}
+bool Word::operator >(const Word &w) const{
+    return compareEnglishString(this->english, w.english);
+}
+bool Word::operator ==(const Word &w) const{
+    return compareEnglishString(this->english, w.english);
+}
+bool Word::operator !=(const Word &w) const{
+    return compareEnglishString(this->english, w.english);
+}
+bool Word::operator <=(const Word &w) const{
+    return compareEnglishString(this->english, w.english);
+}
+bool Word::operator >=(const Word &w) const{
+    return compareEnglishString(this->english, w.english);
+}
