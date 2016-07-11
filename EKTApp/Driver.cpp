@@ -7,7 +7,7 @@
 //
 
 #include "Driver.hpp"
-
+#include <sstream>
 
 using namespace std;
 
@@ -35,8 +35,43 @@ void Driver::testSearchWords() {
     
 }
 
+void Driver::read() {
+    string line;
+    string english = "";
+    while(getline(cin, line)) {
+        char eachLine[128];
+        strcpy(eachLine, line.c_str());
+        string englishWord;
+        string klingonWord;
+        bool isEnglish = true;
+        
+        for (int c = 0; c < 100; c++) {
+            if (eachLine[c] == '\0') break; //end of line
+            if (eachLine[c] == ' ') continue; //ignore space
+            if (eachLine[c] == ':') {
+                isEnglish = false;
+                continue;
+            }
+            stringstream ss;
+            string s;
+            if (isEnglish) {
+                string englishLetter;
+                ss << eachLine[c];
+                ss >> englishLetter;
+                englishWord += englishLetter;
+            } else {
+                string klingonLetter;
+                ss << eachLine[c];
+                ss >> klingonLetter;
+                klingonWord += klingonLetter;
+            }
+        }
+        Word newWord = Word(englishWord, klingonWord);
+        wordList.push_back(newWord);
+    }
+}
 
-void Driver::populateDictionary(){
+void Driver::populateDictionary() {
     dictionary = *new KlingonDictionary();
     dictionary.populate(wordList);
 }
