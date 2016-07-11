@@ -25,6 +25,8 @@ public:
     
     void populate(vector<Word>);
     string klingonFor(string englishWord);
+    void printAll();
+    
 };
 
 #endif /* KlingonDictionary_hpp */

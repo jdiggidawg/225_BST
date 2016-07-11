@@ -1,4 +1,4 @@
-//
+
 //  Driver.cpp
 //  EKTApp
 //
@@ -13,11 +13,17 @@ using namespace std;
 
 void testWordConstruction();
 
+
 void Driver::test(){
     testWordConstruction();
     populateWordList();
     populateDictionary();
-    testSearchWords();
+    printDictionary();
+    //testSearchWords();
+}
+
+void Driver::printDictionary(){
+    dictionary.printAll();
 }
 
 void Driver::testSearchWords() {
@@ -87,12 +93,6 @@ void Driver::populateWordList(){
     wordList.push_back(*word3);
     wordList.push_back(*word4);
     wordList.push_back(*word5);
-    
-    return;
-    
-    for (Word eachWord: wordList) {
-        cout << eachWord.english << ": " << eachWord.klingon << endl;
-    }
     
 }
 

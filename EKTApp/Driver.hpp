@@ -26,6 +26,7 @@ public:
     void populateDictionary();
     void testSearchWords();
     void read();
+    void printDictionary();
 };
 
 

@@ -18,7 +18,15 @@ void KlingonDictionary::populate(vector<Word> wordList) {
 string KlingonDictionary::klingonFor(string englishWord) {
     Word *query = new Word();
     query->english = englishWord;
+    
     Word result = *tree.search(query);
     
     return result.klingon;
+}
+
+void KlingonDictionary::printAll() {
+    
+    for (Word eachWord : tree.flattenedTree()) {
+        cout << eachWord.english << ": " << eachWord.klingon << endl;
+    }
 }
