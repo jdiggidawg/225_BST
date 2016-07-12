@@ -21,32 +21,33 @@ class BST{
 
 private:
     
-    struct node {
+    typedef struct Node {
         Type data;
-        node* left;
-        node* right;
-        node(){};
-        node (Type value): data(value), left(NULL), right(NULL) {};
-    };
+        Node* left;
+        Node* right;
+        Node(){};
+        Node (Type value): data(value), left(NULL), right(NULL) {};
+    } Node;
     
-    node* root;
-    bool insertPrivate(Type newThing,node* ptr);
-    void traverse(node* root, vector<Type> *list);
-    void balance();
+    Node* root;
+    Node* insertPrivate(Node* subTreePtr, Node* newNode);
+    void traverse(Node* root, vector<Type> *list);
     
 public:
+    
     
     BST();
     BST(vector<Type> list);
     
-    bool insert (Type);
-    Type* search (Type *target);
+    bool insert (Type newData);
+    Type* search (Type target);
     vector<Type> flattenedTree();
 };
 
 //PRIVATE METHODS IMPLEMENTATION--------------------------------------------------------------------------------
+
 template <class Type>
-void BST<Type>:: traverse(node* current, vector<Type> *list){
+void BST<Type>:: traverse(Node* current, vector<Type> *list){
     if(current != NULL) {
         traverse(current->left, list);
         
@@ -56,37 +57,25 @@ void BST<Type>:: traverse(node* current, vector<Type> *list){
     }
 }
 
-template <class Type>
-void BST<Type>:: balance(){
-    //TODO:
-}
 
-//TODO:
+//TODO: FIX UNKNOWN RETURN TYPE NAME NODE*
 template <class Type>
-bool BST<Type>::insertPrivate(Type newThing,node *ptr) {
-    node newNode = new node(newThing);
-    if(root == NULL) {
-        root = &newNode;
-    } else if (newNode.data < ptr->data) {
-        if (ptr->left != NULL) {
-            insertPrivate(snewNode.data, ptr->left);
-        } else {
-            ptr->left = &newNode;
-        }
+Node* BST<Type>::insertPrivate(Node* subTreePtr, Node* newNode){
+    if(subTreePtr == NULL) {
+        return newNode;
+    } else if (newNode->data < subTreePtr->data) {
+        Node* tempPtr = insertPrivate(subTreePtr->left, newNode);
+        subTreePtr->left = tempPtr;
         
-    } else if (newNode.data < ptr->data) {
-        if (ptr->right != NULL) {
-            insertPrivate(newNode.data, ptr->right);
-        } else {
-            ptr->right = &newNode;
-        }
+    } else if (newNode->data > subTreePtr->data) {
+        Node* tempPtr = insertPrivate(subTreePtr->right, newNode);
+        subTreePtr->right = tempPtr;
     }
-    return true;
 }
 
 
 
-//PUBLIC METHODS IMPLEMENTATION---------------------------------------------------------------------------------
+//PUBLIC METHODS IMPLEMENTATION--------------------------------------------------------------------------------
 
 //Contructors
 template <class Type>
@@ -102,15 +91,16 @@ BST<Type>:: BST(vector<Type>) {
 
 //Insertion
 template <class Type>
-bool BST<Type>::insert(Type newThing) {
-    insertPrivate(newThing, root);
+bool BST<Type>::insert(Type newData) {
+    Node* newNode = new Node*(newData);
+    root = insertPrivate(root,newNode);
     return true;
 }
 
 
 //Search
 template <class Type>
-Type* BST<Type>::search (Type *target) {
+Type* BST<Type>::search (Type target) {
     //TODO:
     return NULL;
 }
