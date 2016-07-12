@@ -22,6 +22,7 @@ class Driver {
 public:
     Driver(){};
     void test();
+    void testPrint();
     void populateWordList();
     void populateDictionary();
     void testSearchWords();

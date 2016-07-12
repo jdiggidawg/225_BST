@@ -17,7 +17,12 @@ void Driver::test(){
     testWordConstruction();
     populateWordList();
     populateDictionary();
-    testSearchWords();
+    testPrint();
+    //testSearchWords();
+}
+
+void Driver::testPrint(){
+    dictionary.printAll();
 }
 
 void Driver::testSearchWords() {

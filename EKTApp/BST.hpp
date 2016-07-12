@@ -21,16 +21,17 @@ class BST{
 
 private:
     
-    struct node {
+    struct Node {
         Type data;
-        node *left;
-        node *right;
-        node(){};
-        node (Type value): data(value), left(NULL), right(NULL) {};
+        Node *left;
+        Node *right;
+        Node(){};
+        Node (Type value): data(value), left(NULL), right(NULL) {};
     };
     
-    node root;
-    void traverse(node* root);
+    Node *root;
+    void traverse(Node* current, vector<Type> *list);
+    void insertPrivate(Node* subTreePtr, Node* newNode);
     
 public:
     
@@ -44,7 +45,7 @@ public:
 
 template <class Type>
 BST<Type>:: BST(){
-    root = node(Type());
+    root = new Node(Type());
 }
 
 template <class Type>
@@ -54,9 +55,30 @@ BST<Type>:: BST(vector<Type>) {
 
 template <class Type>
 bool BST<Type>::insert (Type newThing) {
-    node newNode = node(newThing);
+    Node *newNode = new Node(newThing);
     //TODO:
+    insertPrivate(root, newNode);
+    
     return true;
+}
+
+template <class Type>
+void BST<Type>::insertPrivate(Node* subTreePtr, Node* newNode) {
+    Node *current = subTreePtr;
+    while (current != NULL) {
+        //
+    }
+    
+    /*if(subTreePtr == NULL) {
+        return;
+    } else if (newNode->data < subTreePtr->data) {
+        Node* tempPtr = insertPrivate(subTreePtr->left, newNode);
+        subTreePtr->left = tempPtr;
+        
+    } else if (newNode->data > subTreePtr->data) {
+        Node* tempPtr = insertPrivate(subTreePtr->right, newNode);
+        subTreePtr->right = tempPtr;
+    }*/
 }
 
 template <class Type>
@@ -66,19 +88,18 @@ Type* BST<Type>::search (Type *target) {
 }
 
 template <class Type>
-vector<Type> flattenedTree(){
-    vector<Type> flatTree;
-    //TODO: traverse...
+vector<Type> BST<Type>::flattenedTree(){
+    vector<Type> flatTree = *new vector<Type>;
+    traverse(root, &flatTree);
     return flatTree;
 }
                   
 template <class Type>
-void BST<Type>:: traverse(node* root){
-    if(root != NULL) {
-        Inorder(root->Left());
-        cout << root->Key() << endl;
-        Inorder(root->Right());
-        
+void BST<Type>:: traverse(Node* current, vector<Type> *list){
+    if(current != NULL) {
+        traverse(current->left, list);
+        list->push_back(current->data);
+        traverse(current->right, list);
     }
 }
 
