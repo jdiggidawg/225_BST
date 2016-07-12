@@ -31,8 +31,6 @@ private:
     
     Node *root;
     void traverse(Node* current, vector<Type> *list);
-    void insertPrivate(Node* subTreePtr, Node* newNode);
-    
 public:
     
     BST();
@@ -45,7 +43,7 @@ public:
 
 template <class Type>
 BST<Type>:: BST(){
-    root = new Node(Type());
+    root = NULL;
 }
 
 template <class Type>
@@ -56,30 +54,35 @@ BST<Type>:: BST(vector<Type>) {
 template <class Type>
 bool BST<Type>::insert (Type newThing) {
     Node *newNode = new Node(newThing);
-    //TODO:
-    insertPrivate(root, newNode);
+    Node *parent = root;
+    Node *current = NULL;
+
+    
+    if (root == NULL){
+        //there's no node.
+        root = newNode;
+    } else {
+        //go down the tree until a space is available
+        current = root;
+        while (current != NULL){
+            parent = current;
+            if (newThing < current->data){
+                current = current->left;
+            } else if (newThing > current->data){
+                current = current->right;
+            }
+        }
+        current = newNode;
+        if (current->data < parent->data) {
+            parent->left = current;
+        } else if (current->data > parent->data) {
+            parent->right = current;
+        }
+    }
     
     return true;
 }
 
-template <class Type>
-void BST<Type>::insertPrivate(Node* subTreePtr, Node* newNode) {
-    Node *current = subTreePtr;
-    while (current != NULL) {
-        //
-    }
-    
-    /*if(subTreePtr == NULL) {
-        return;
-    } else if (newNode->data < subTreePtr->data) {
-        Node* tempPtr = insertPrivate(subTreePtr->left, newNode);
-        subTreePtr->left = tempPtr;
-        
-    } else if (newNode->data > subTreePtr->data) {
-        Node* tempPtr = insertPrivate(subTreePtr->right, newNode);
-        subTreePtr->right = tempPtr;
-    }*/
-}
 
 template <class Type>
 Type* BST<Type>::search (Type *target) {

@@ -7,10 +7,12 @@
 //
 
 #include "Word.hpp"
+#include <string>
+
 
 bool compareEnglishString(string lhs, string rhs){
-    //TODO:
-    return true;
+    //TODO: verify.
+    return lhs.compare(rhs);
 }
 
 bool Word::operator <(const Word &w) const{

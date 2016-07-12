@@ -10,6 +10,8 @@
 
 
 void KlingonDictionary::populate(vector<Word> wordList) {
+    //TODO: shuffle first.
+    random_shuffle(wordList.begin(), wordList.end());
     for (int i = 0; i < wordList.size(); i++) {
         tree.insert(wordList[i]);
     }
