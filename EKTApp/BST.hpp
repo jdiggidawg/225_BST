@@ -97,7 +97,7 @@ bool BST<Type>::insert(Type newData) {
     return true;
 }
 
-//TODO: FIX UNKNOWN RETURN TYPE NAME NODE*
+//TODO: FIX UNKNOWN RETURN TYPE NAME NODE*, create another Search function that returns data
 //Search
 template <class Type>
 Node* BST<Type>::findNode(Node* subTreePtr, Type target); {
