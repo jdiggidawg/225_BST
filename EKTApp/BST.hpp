@@ -21,13 +21,13 @@ class BST{
 
 private:
     
-    typedef struct Node {
+    struct Node {
         Type data;
         Node* left;
         Node* right;
         Node(){};
         Node (Type value): data(value), left(NULL), right(NULL) {};
-    } Node;
+    };
     
     Node* root;
     Node* insertPrivate(Node* subTreePtr, Node* newNode);
@@ -40,7 +40,7 @@ public:
     BST(vector<Type> list);
     
     bool insert (Type newData);
-    Type* search (Type target);
+    Node* findNode(Node* subTreePtr. Type target);
     vector<Type> flattenedTree();
 };
 
@@ -97,13 +97,21 @@ bool BST<Type>::insert(Type newData) {
     return true;
 }
 
-
+//TODO: FIX UNKNOWN RETURN TYPE NAME NODE*
 //Search
 template <class Type>
-Type* BST<Type>::search (Type target) {
-    //TODO:
-    return NULL;
+Node* BST<Type>::findNode(Node* subTreePtr, Type target); {
+    if (subTreePtr == NULL) {
+        return NULL;
+    } else if (subTreePtr->data == target) {
+        return subTreePtr;
+    } else if (subTreePtr->data > target) {
+        return findNode(subTreePtr->left, target);
+    } else {
+        return findNode(subTreePtr->rigt,target);
+    }
 }
+
 
 //Convert to vector
 template <class Type>
