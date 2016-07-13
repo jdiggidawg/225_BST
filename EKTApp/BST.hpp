@@ -37,7 +37,7 @@ public:
     BST(vector<Type> list);
     
     bool insert (Type);
-    Type* search (Type *target);
+    Type* search (Type* target);
     vector<Type> flattenedTree();
 };
 
@@ -83,10 +83,21 @@ bool BST<Type>::insert (Type newThing) {
     return true;
 }
 
-
+//TODO: CAN'T COMPARE TARGET WITH CURRENT->DATA
 template <class Type>
-Type* BST<Type>::search (Type *target) {
-    //TODO:
+Type* BST<Type>::search (Type* target) {
+    /*Node *current = root;
+    
+    while (current != NULL)
+    {
+        if (*current->data == *target) {
+            return &current->data;
+        } else if (target > current->data) {
+            current = current->right;
+        } else {
+            current = current->left;
+        }
+    }*/
     return NULL;
 }
 

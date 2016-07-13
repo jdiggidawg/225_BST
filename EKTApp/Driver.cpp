@@ -18,7 +18,7 @@ void Driver::test(){
     populateWordList();
     populateDictionary();
     testPrint();
-    //testSearchWords();
+    testSearchWords();
 }
 
 void Driver::testPrint(){
@@ -93,9 +93,9 @@ void Driver::populateWordList(){
     
     return;
     
-    for (Word eachWord: wordList) {
-        cout << eachWord.english << ": " << eachWord.klingon << endl;
-    }
+    //for (Word eachWord: wordList) {
+    //    cout << eachWord.english << ": " << eachWord.klingon << endl;
+    //}
     
 }
 
