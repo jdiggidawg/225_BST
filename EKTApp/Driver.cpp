@@ -19,6 +19,20 @@ void Driver::test(){
     populateDictionary();
     testPrint();
     testSearchWords();
+    testOperatorOverload();
+}
+
+void Driver::testOperatorOverload() {
+    Word *word1 = new Word("a", "AAA");
+    Word *word2 = new Word("a", "AAA");
+    Word *word3 = new Word("a", "");
+    Word *word4 = new Word("b", "BBB");
+    
+    assert(*word1 == *word2);
+    assert(*word1 == *word3);
+    assert(*word4 > *word1);
+    assert(*word4 != *word1);
+    
 }
 
 void Driver::testPrint(){

@@ -28,8 +28,8 @@ public:
     bool operator <(const Word &w) const;
     bool operator >(const Word &w) const;
     bool operator !=(const Word &w) const;
-    bool operator <=(const Word &w) const;
-    bool operator >=(const Word &w) const;
+    //bool operator <=(const Word &w) const;
+    //bool operator >=(const Word &w) const;
     
     
 };

@@ -83,21 +83,20 @@ bool BST<Type>::insert (Type newThing) {
     return true;
 }
 
-//TODO: CAN'T COMPARE TARGET WITH CURRENT->DATA
 template <class Type>
 Type* BST<Type>::search (Type* target) {
-    /*Node *current = root;
+    Node *current = root;
     
     while (current != NULL)
     {
-        if (*current->data == *target) {
+        if (current->data == *target) {
             return &current->data;
-        } else if (target > current->data) {
-            current = current->right;
-        } else {
+        } else if (*target < current->data) {
             current = current->left;
+        } else {
+            current = current->right;
         }
-    }*/
+    }
     return NULL;
 }
 

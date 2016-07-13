@@ -10,26 +10,32 @@
 #include <string>
 
 
-bool compareEnglishString(string lhs, string rhs){
+bool compareEnglishString(string lhs, string rhs, string oper){
     //TODO: verify.
-    return lhs.compare(rhs);
+    int value = lhs.compare(rhs);
+    if (value == 0 && oper == "==") {
+        return true;
+    } else if (value > 0 && oper == ">") {
+        return true;
+    } else if (value < 0 && oper == "<") {
+        return true;
+    } else if (value != 0 && oper == "!=") {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 bool Word::operator <(const Word &w) const{
-    return compareEnglishString(this->english, w.english);
+    return compareEnglishString(this->english, w.english,"<");
 }
 bool Word::operator >(const Word &w) const{
-    return compareEnglishString(this->english, w.english);
+    return compareEnglishString(this->english, w.english,">");
 }
 bool Word::operator ==(const Word &w) const{
-    return compareEnglishString(this->english, w.english);
+    return compareEnglishString(this->english, w.english,"==");
 }
+
 bool Word::operator !=(const Word &w) const{
-    return compareEnglishString(this->english, w.english);
-}
-bool Word::operator <=(const Word &w) const{
-    return compareEnglishString(this->english, w.english);
-}
-bool Word::operator >=(const Word &w) const{
-    return compareEnglishString(this->english, w.english);
+    return compareEnglishString(this->english, w.english,"!=");
 }
