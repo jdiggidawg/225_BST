@@ -25,9 +25,9 @@ int main(int argc, const char * argv[]) {
     string sourceFileName = "dataFile.txt";
     
     if (argc == 1) {
-    //    app->launchWith(sourceFileName);
+        app->launchWith(sourceFileName);
     //} else if (argc == 2){ //display
-        app->launchAndPrint(sourceFileName);
+        //app->launchAndPrint(sourceFileName);
     }
     
     return 0;

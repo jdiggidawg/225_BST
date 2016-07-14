@@ -13,8 +13,10 @@
 #include <iostream>
 #include <cctype>
 
+using namespace std;
+
 vector<Word> vectorizeTextFile(string sourceFileName);
-void toLower(basic_string<wchar_t>& s);
+
 
 EKTApp::EKTApp() {
     dictionary = new KlingonDictionary();
@@ -26,9 +28,48 @@ void EKTApp::launchWith(string sourceFileName){
     //TODO: ask user for english word input
     //then print the klingon word for the input...
     
-    vector<Word> wordsToBeTranslated;
+    vector<string> wordsToBeTranslated;
+    string line;
+
+    /*while (cin >> line) {
+        wordsToBeTranslated.push_back(line);
+    }*/
+    
+    
+    while (getline(cin,line)) {
+        bool checkWhiteSpace = false;
+        char eachLine[128];
+        strcpy(eachLine, line.c_str());
+        string temp;
+        int c = 0;
+        
+        while (eachLine[c] != '\n') {
+            if (eachLine[c] != ' ') {
+                checkWhiteSpace = true;
+                break;
+            }
+            c++;
+        }
+        
+        if (!line.empty() && checkWhiteSpace) {
+            istringstream ss(line);
+            
+            string token;
+            string word;
+            while(getline(ss, token,' ')) {
+                word+=token;
+            }
+            wordsToBeTranslated.push_back(word);
+        }
+    }
+    cout<<endl<<"Testing"<<endl;
+    for (string eachWord: wordsToBeTranslated) {
+        cout << eachWord<<endl;
+    }
     
 }
+
+
 
 void EKTApp::launchAndPrint(string sourceFileName){
     dictionary->populate(vectorizeTextFile(sourceFileName));
@@ -68,7 +109,7 @@ vector<Word> vectorizeTextFile(string sourceFileName){
                     continue;
                 }
                 stringstream ss;
-                string s;
+                
                 if (isEnglish) {
                     string englishLetter;
                     ss << eachLine[c];
