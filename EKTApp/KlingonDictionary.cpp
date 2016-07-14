@@ -29,6 +29,6 @@ string KlingonDictionary::klingonFor(string englishWord) {
 void KlingonDictionary::printAll() {
     
     for (Word eachWord : tree.flattenedTree()) {
-        cout << eachWord.english << ": " << eachWord.klingon << endl;
+        cout << eachWord.english << ":" << eachWord.klingon << endl;
     }
 }

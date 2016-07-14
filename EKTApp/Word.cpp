@@ -8,34 +8,25 @@
 
 #include "Word.hpp"
 #include <string>
+#include <algorithm>
 
+using namespace std;
 
-bool compareEnglishString(string lhs, string rhs, string oper){
-    //TODO: verify.
-    int value = lhs.compare(rhs);
-    if (value == 0 && oper == "==") {
-        return true;
-    } else if (value > 0 && oper == ">") {
-        return true;
-    } else if (value < 0 && oper == "<") {
-        return true;
-    } else if (value != 0 && oper == "!=") {
-        return true;
-    } else {
-        return false;
-    }
+string toLower(string inString){
+    transform(inString.begin(), inString.end(), inString.begin(), ::tolower);
+    return inString;
 }
 
 bool Word::operator <(const Word &w) const{
-    return compareEnglishString(this->english, w.english,"<");
+    return toLower(this->english).compare(toLower(w.english)) < 0;
 }
 bool Word::operator >(const Word &w) const{
-    return compareEnglishString(this->english, w.english,">");
+    return toLower(this->english).compare(toLower(w.english)) > 0;
 }
 bool Word::operator ==(const Word &w) const{
-    return compareEnglishString(this->english, w.english,"==");
+    return toLower(this->english).compare(toLower(w.english)) == 0;
 }
 
 bool Word::operator !=(const Word &w) const{
-    return compareEnglishString(this->english, w.english,"!=");
+    return toLower(this->english).compare(toLower(w.english)) != 0;
 }

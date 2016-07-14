@@ -70,6 +70,9 @@ bool BST<Type>::insert (Type newThing) {
                 current = current->left;
             } else if (newThing > current->data){
                 current = current->right;
+            } else {
+                //cout << endl;
+                break;
             }
         }
         current = newNode;
@@ -77,6 +80,8 @@ bool BST<Type>::insert (Type newThing) {
             parent->left = current;
         } else if (current->data > parent->data) {
             parent->right = current;
+        } else {
+            //cout << endl;
         }
     }
     

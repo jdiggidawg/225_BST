@@ -31,6 +31,7 @@ void Driver::testOperatorOverload() {
     assert(*word1 == *word2);
     assert(*word1 == *word3);
     assert(*word4 > *word1);
+    assert(*word1 < *word4);
     assert(*word4 != *word1);
     
 }
@@ -99,11 +100,22 @@ void Driver::populateWordList(){
     Word *word3 = new Word("c", "CCC");
     Word *word4 = new Word("d", "DDD");
     Word *word5 = new Word("e", "EEE");
+    Word *word6 = new Word("e", "EEE");
+    Word *word7 = new Word("Eaa", "EEEaaa");
+    Word *word8 = new Word("Ebb","EEEbbb");
+    Word *word9 = new Word("eba","EEEbba");
+    Word *word10 = new Word("Eba","EEEbba");
+    
     wordList.push_back(*word1);
     wordList.push_back(*word2);
     wordList.push_back(*word3);
     wordList.push_back(*word4);
     wordList.push_back(*word5);
+    wordList.push_back(*word6);
+    wordList.push_back(*word7);
+    wordList.push_back(*word8);
+    wordList.push_back(*word9);
+    wordList.push_back(*word10);
     
     return;
     
