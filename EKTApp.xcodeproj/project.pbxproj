@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50D4D0711D37FA1A0048E88A /* EKTApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50D4D0701D37FA1A0048E88A /* EKTApp.cpp */; };
 		50E2FD0C1D32EB5B0008304D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50E2FD0B1D32EB5B0008304D /* main.cpp */; };
 		A7C6043E1D32EEE7001B5C31 /* Word.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7C6043C1D32EEE7001B5C31 /* Word.cpp */; };
 		A7C604471D32F8CF001B5C31 /* Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7C604451D32F8CF001B5C31 /* Driver.cpp */; };
@@ -26,6 +27,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		50D4D0701D37FA1A0048E88A /* EKTApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EKTApp.cpp; sourceTree = "<group>"; };
+		50D4D0721D37FA250048E88A /* EKTApp.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EKTApp.hpp; sourceTree = "<group>"; };
 		50E2FD081D32EB5B0008304D /* EKTApp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EKTApp; sourceTree = BUILT_PRODUCTS_DIR; };
 		50E2FD0B1D32EB5B0008304D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		50E2FD1F1D330AE40008304D /* BST.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BST.hpp; sourceTree = "<group>"; };
@@ -68,6 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				50E2FD0B1D32EB5B0008304D /* main.cpp */,
+				50D4D0721D37FA250048E88A /* EKTApp.hpp */,
+				50D4D0701D37FA1A0048E88A /* EKTApp.cpp */,
 				A7C604481D330137001B5C31 /* KlingonDictionary.cpp */,
 				A7C604491D330137001B5C31 /* KlingonDictionary.hpp */,
 				50E2FD1F1D330AE40008304D /* BST.hpp */,
@@ -138,6 +143,7 @@
 				A7C604471D32F8CF001B5C31 /* Driver.cpp in Sources */,
 				50E2FD0C1D32EB5B0008304D /* main.cpp in Sources */,
 				A7C6044A1D330137001B5C31 /* KlingonDictionary.cpp in Sources */,
+				50D4D0711D37FA1A0048E88A /* EKTApp.cpp in Sources */,
 				A7C6043E1D32EEE7001B5C31 /* Word.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
