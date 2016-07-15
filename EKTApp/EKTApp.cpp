@@ -29,11 +29,9 @@ void EKTApp::launchWith(string sourceFileName){
     //then print the klingon word for the input...
     
     vector<string> wordsToBeTranslated;
+    vector<Word> translatedResult;
     string line;
 
-    /*while (cin >> line) {
-        wordsToBeTranslated.push_back(line);
-    }*/
     
     
     while (getline(cin,line)) {
@@ -43,13 +41,14 @@ void EKTApp::launchWith(string sourceFileName){
         string temp;
         int c = 0;
         
-        while (eachLine[c] != '\n') {
+        while (eachLine[c] != '\0') {
             if (eachLine[c] != ' ') {
                 checkWhiteSpace = true;
                 break;
             }
             c++;
         }
+        
         
         if (!line.empty() && checkWhiteSpace) {
             istringstream ss(line);
@@ -61,12 +60,14 @@ void EKTApp::launchWith(string sourceFileName){
             }
             wordsToBeTranslated.push_back(word);
         }
-    }
-    cout<<endl<<"Testing"<<endl;
-    for (string eachWord: wordsToBeTranslated) {
-        cout << eachWord<<endl;
+        
     }
     
+    for (string eachWord: wordsToBeTranslated) {
+        string klingonWord = dictionary->klingonFor(eachWord);
+        cout<< endl<<eachWord<<":"<< klingonWord;
+    }
+    cout<<endl;
 }
 
 

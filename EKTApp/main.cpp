@@ -26,8 +26,8 @@ int main(int argc, const char * argv[]) {
     
     if (argc == 1) {
         app->launchWith(sourceFileName);
-    //} else if (argc == 2){ //display
-        //app->launchAndPrint(sourceFileName);
+    } else if (argc == 2){ //display
+        app->launchAndPrint(sourceFileName);
     }
     
     return 0;

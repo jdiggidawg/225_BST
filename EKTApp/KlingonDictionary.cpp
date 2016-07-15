@@ -20,10 +20,12 @@ void KlingonDictionary::populate(vector<Word> wordList) {
 string KlingonDictionary::klingonFor(string englishWord) {
     Word *query = new Word();
     query->english = englishWord;
+    Word *result = tree.search(query);
     
-    Word result = *tree.search(query);
-    
-    return result.klingon;
+    if (result == NULL) {
+        return "<not found>";
+    }
+    return result->klingon;
 }
 
 void KlingonDictionary::printAll() {
